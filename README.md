@@ -176,35 +176,6 @@ python -m pytest test_api.py -v
 
 ---
 
-## 🌐 Production Deployment Guide
-
-### Deploy Backend to Render
-
-1. Create a new **Web Service** on [Render](https://render.com).
-2. Connect your GitHub repository.
-3. Configure the settings:
-   - **Root Directory:** `backend`
-   - **Environment:** `Python 3`
-   - **Build Command:** `pip install -r requirements.txt`
-   - **Start Command:** `uvicorn main:app --host 0.0.0.0 --port $PORT`
-4. Add Environment Variables:
-   - `GEMINI_API_KEY`: *(Your Google Gemini API Key)*
-   - `GEMINI_MODEL`: `gemini-2.5-flash`
-   - `DATABASE_URL`: *(Leave blank for SQLite, or connect a Render PostgreSQL instance)*
-
----
-
-### Deploy Frontend to Vercel
-
-1. Import your project into [Vercel](https://vercel.com).
-2. Set the **Root Directory** to `frontend`.
-3. Framework Preset: **Vite**.
-4. Add Environment Variable:
-   - `VITE_API_URL`: `https://your-backend-name.onrender.com/api`
-5. Click **Deploy**. The `vercel.json` file handles all client-side SPA routing automatically.
-
----
-
 ## 📡 API Specification
 
 | Endpoint | Method | Description |
